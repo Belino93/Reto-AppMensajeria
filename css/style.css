@@ -8,7 +8,7 @@
     top: 0%;
     right: 0%;
     height: 100%;
-    width: 15em;
+    width: 15.625em;
     border-right: 0.2px solid black;
     background-color: lightblue;
 }
@@ -22,10 +22,13 @@
 #account-side-menu {
     margin-left: 5px;
     display: flex;
+    
 }
 
 #header-side-content {
     margin-left: 5px;
+    border-bottom: 1px solid lightseagreen;
+    border-top: 1px solid lightseagreen;
 }
 
 
@@ -33,7 +36,64 @@
     
 }
 
+#chat-side-menu {
+    margin-left: 5px;
+    font-size: 20px;
+    border-bottom: 1px solid lightseagreen
+    
+}
 
+.side-channel {
+    padding: 0.5em;
+    padding-left: 0;
+    border-bottom: 1px solid lightseagreen;
+}
+
+#chat-view {
+    position: fixed;
+    margin-top: 0%;
+    margin-left: 15.1875em;
+    padding-left: 5px;
+    border-left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#write-msg {
+    margin-left: 4em;
+    width: 55em;
+    height: 2.5em;
+    position: absolute;
+    bottom: 3em;
+    border: 1px solid rgb(39, 209, 96);
+    border-radius: 5px;
+    overflow-y: scroll;
+    font-family: 'Courier New', Courier, monospace;
+    
+    
+    
+    
+}
+
+
+/* Add button */
+.btn-add{
+    position: sticky;
+    height: 18px;
+    width: 18px;
+    left: 100%;
+    margin-right: 3px;
+    
+
+  }
+    
+
+.btn-add:hover{
+    color: #8a2be2;
+    border: 2px solid #8a2be2;
+    border-radius: 50%;
+}
+ /* on/off status  */
 #status-side-menu {
     width: 0.7em;
     height: 0.7em;
@@ -53,6 +113,9 @@
     left: 90%;
     bottom: 2.65em;
 
+}
+#bell-icon:hover {
+    color: greenyellow;
 }
 
 .gg-bell,
