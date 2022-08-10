@@ -36,7 +36,8 @@
     
 }
 
-#chat-side-menu {
+.chat-side-menu {
+    margin-top: 2em;
     margin-left: 5px;
     font-size: 20px;
     border-bottom: 1px solid lightseagreen
@@ -60,6 +61,7 @@
 }
 
 #write-msg {
+
     margin-left: 4em;
     width: 55em;
     height: 2.5em;
@@ -69,10 +71,9 @@
     border-radius: 5px;
     overflow-y: scroll;
     font-family: 'Courier New', Courier, monospace;
-    
-    
-    
-    
+    resize: none;
+    text-align: left;
+    padding: 0%;
 }
 
 

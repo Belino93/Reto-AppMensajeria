@@ -23,10 +23,18 @@
             
         </div>
         
-        <div>
-            <div id="chat-side-menu">
+        <div id="box-channel-menu">
+            <div class="chat-side-menu">
                 <span>Channels</span>
-                <input type="image" src="./media/img/add-btn.png" alt="añadir" onclick="" class="btn-add">
+                <input type="image" src="./media/img/add-btn.png" alt="añadir" onclick="addChannel()" class="btn-add"name="btn-direct(this.value)" value="1">
+            </div>
+            
+        </div>
+
+        <div id="box-direct-menu">
+            <div class="chat-side-menu">
+                <span>Directs</span>
+                <input type="image" src="./media/img/add-btn.png" alt="añadir" onclick="addDirect()" class="btn-add" name="btn-direct">
             </div>
             
             <div class="side-channel"># Cristian</div>
@@ -40,7 +48,9 @@
             <p>Mensaje</p>
         </div>
 
-        <textarea name="write-msg" id="write-msg" cols="30" rows="10" placeholder="Write your message here!"></textarea>
+        <input type="text" id="write-msg">
+        <button id="send-btn" onclick="send()"></button>
+        
     </div>
 
 </body>
