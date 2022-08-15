@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./main.js"></script>
+    
     <title>Reto final | APP Mensajeria</title>
 </head>
 <body>
@@ -16,19 +16,17 @@
             <div class="gg-bell" onclick=""></div>
             </span>
         </div>
-        
+
         <div id="account-side-menu">
             <h4 id="user-side-menu">Belino93</h4>
             <div id="status-side-menu"></div>
-            
         </div>
-        
+
         <div id="box-channel-menu">
             <div class="chat-side-menu">
                 <span>Channels</span>
                 <input type="image" src="./media/img/add-btn.png" alt="añadir" onclick="addChannel()" class="btn-add"name="btn-direct(this.value)" value="1">
-            </div>
-            
+            </div>   
         </div>
 
         <div id="box-direct-menu">
@@ -36,22 +34,15 @@
                 <span>Directs</span>
                 <input type="image" src="./media/img/add-btn.png" alt="añadir" onclick="addDirect()" class="btn-add" name="btn-direct">
             </div>
-            
-            <div class="side-channel"># Cristian</div>
-            <div class="side-channel"># Cristian</div>
-        </div>
-        
+        </div> 
     </aside>
 
-    <div id="chat-view">
-        <div>
-            <p>Mensaje</p>
+    <div id="chat-view">    
+        <div id="chat-view-content">
+
         </div>
-
-        <input type="text" id="write-msg">
-        <button id="send-btn" onclick="send()"></button>
-        
     </div>
-
+    <input type="text" id="write-text" onkeypress="send()"></input>
+    <script src="./main.js"></script>
 </body>
 </html>

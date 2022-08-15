@@ -49,6 +49,10 @@
     padding-left: 0;
     border-bottom: 1px solid lightseagreen;
 }
+.side-channel:hover {
+    
+}
+
 
 #chat-view {
     position: fixed;
@@ -56,27 +60,61 @@
     margin-left: 15.1875em;
     padding-left: 5px;
     border-left: 0;
-    height: 100%;
-    width: 100%;
+    height: 95%;
+    width: 90%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#chat-view-content {
+    height: auto;
 }
 
-#write-msg {
+.bubble-msg {
+    padding: 15px;
+    
+}
 
-    margin-left: 4em;
-    width: 55em;
-    height: 2.5em;
+.bubble-msg-image {
+    height: 3.5em;
+       
+}
+.bubble-msg-user {
+    position: relative;
+    bottom: 2em;
+    
+    
+}
+
+.bubble-msg-time {
+    position: relative;
+    bottom: 2em;
+    
+}
+
+.bubble-msg-text{
+    position: relative;
+    left: 3.3em;
+    bottom: 2.3em;
+    
+}
+#write-text {
+    width: 70%;
+    height: 2em;
     position: absolute;
+    display: block;
     bottom: 3em;
+    left: 20em;
     border: 1px solid rgb(39, 209, 96);
     border-radius: 5px;
     overflow-y: scroll;
     font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
     resize: none;
     text-align: left;
     padding: 0%;
+    padding-left: 10px;
+
 }
-
-
 /* Add button */
 .btn-add{
     position: sticky;
@@ -166,3 +204,7 @@
  border-bottom-left-radius: 100px;
  border-bottom-right-radius: 100px
 } 
+
+#send-btn {
+    display: block;
+}
