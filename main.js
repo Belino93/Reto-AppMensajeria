@@ -1,22 +1,38 @@
+class Chat {
+
+    constructor(name, content) {
+        this.name = name;
+        this.content = content;
+    }
+}
+
+let array = []
+let chat_index = undefined
+
+if (chat_index == undefined) {
+    document.getElementById('chat-view').style.background = 'grey'
+}
 
 // Create new channel in side bar
 const addChannel = () => {
-    let newchannel = prompt('Introduce el nombre del canal a crear');
-    //channels.push(newchannel);
-    return document.getElementById('box-channel-menu').innerHTML += `<div class="side-channel"><span onclick="openChat()"># ${newchannel}</span></div>`
     
+    let namechannel = prompt('Introduce el nombre del canal a crear');
+    let chat = new Chat(namechannel, '');
+    
+    return document.getElementById('box-channel-menu').innerHTML += `<div class="side-channel"><span onclick="openChat(this)">${chat.name}</span></div>`, array.push(chat)
 }
 
 // Create new direct chat in side bar
 
 const addDirect = () => {
-    let newchannel = prompt('Introduce el nombre del canal a crear');
+    let namechannel = prompt('Introduce el nombre del canal a crear');
+    let chat = new Chat(namechannel, ''); 
     //directs.push(newchannel);
-    return document.getElementById('box-direct-menu').innerHTML += `<div class="side-channel"><span onclick="openChat()"># ${newchannel}</span></div>`
+    return document.getElementById('box-direct-menu').innerHTML += `<div class="side-channel"><span onclick="openChat(this)">${chat.name}</span></div>`, array.push(chat)
     
 }
 
-//
+// Send message function
 const send = () => {
     if (event.keyCode == 13) {
 
@@ -26,23 +42,40 @@ const send = () => {
         let time = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
 
         document.getElementById('write-text').value = '';
-
-        return document.getElementById('chat-view-content').innerHTML += `<div class="bubble-msg">
+        let messageHtml = `<div class="bubble-msg">
         <input type="image" src="./media/img/user.png" alt="user-img" class="bubble-msg-image">
         <span class="bubble-msg-user">${user}</span>
         <span class="bubble-msg-time">${time}</span>
         <p class="bubble-msg-text">${msg}</p>
-        </div>`, document.getElementById('chat-view').scrollTop = document.getElementById('chat-view').scrollHeight;
+        </div>`;
+        
+        
+
+        return document.getElementById('chat-view-content').innerHTML += messageHtml, document.getElementById('chat-view').scrollTop = document.getElementById('chat-view').scrollHeight, array[chat_index].content += messageHtml;
         
     }
     
         
 }
 
-const openChat = () => {
-    let chat = document.getElementById('chat-view-content').innerHTML
-    console.log(chat)
+const openChat = (value) => {
+    let chat = value.textContent
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        if (chat == array[i].name) {
+            chat_index = i
+            console.log('seleccionado chat' + chat)
+            document.getElementById('chat-view').style.background = 'white'
+            document.getElementById('write-msg-box').innerHTML = '<input type="text" id="write-text" onkeypress="send()"></input>'
+        }
+    }
+    
+    return document.getElementById('chat-view-content').innerHTML = array[chat_index].content   
+
 }
 
 
 
+
+
+    //let chat = document.getElementById('chat-view-content').innerHTML

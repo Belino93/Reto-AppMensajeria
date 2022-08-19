@@ -26,7 +26,9 @@
             <div class="chat-side-menu">
                 <span>Channels</span>
                 <input type="image" src="./media/img/add-btn.png" alt="añadir" onclick="addChannel()" class="btn-add"name="btn-direct(this.value)" value="1">
-            </div>   
+            </div>
+            
+
         </div>
 
         <div id="box-direct-menu">
@@ -34,15 +36,20 @@
                 <span>Directs</span>
                 <input type="image" src="./media/img/add-btn.png" alt="añadir" onclick="addDirect()" class="btn-add" name="btn-direct">
             </div>
+            
+            
+
         </div> 
     </aside>
 
     <div id="chat-view">    
         <div id="chat-view-content">
-
+            
         </div>
     </div>
-    <input type="text" id="write-text" onkeypress="send()"></input>
+    <div id="write-msg-box">
+        
+    </div>
     <script src="./main.js"></script>
 </body>
 </html>
